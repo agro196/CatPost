@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+.inputRoot {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 8px;
+}
+
+.input {
+  font-family: $PT-Sans;
+  font-size: 16px;
+  line-height: 21px;
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  &:hover {
+    border: $border-hover;
+  }
+
+  &:focus {
+    border: $border-focus;
+    outline: none;
+  }
+}
+
+.textarea {
+  min-height: 160px;
+  resize: none;
+}

@@ -1,0 +1,48 @@
+@import "../../styles/variables";
+
+.root {
+  font-size: 16px;
+  line-height: 21px;
+  padding-left: 34px;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border: $border;
+    border-radius: $radius;
+  }
+
+  &::after {
+    content: "";
+    display: none;
+    position: absolute;
+    width: 17px;
+    height: 7px;
+    top: 5px;
+    left: 4px;
+    border-left: 2px solid $basic-blue;
+    border-bottom: 2px solid $basic-blue;
+    transform: rotate(-45deg);
+  }
+}
+
+.rootChecked {
+  &::after {
+    display: block;
+  }
+}
+
+.input:focus ~ .root::before {
+  border-color: $basic-black;
+}
+
+// .checkbox-field__input:hover ~ .checkbox-field__label::before {
+//   border-color: $b;
+// }
