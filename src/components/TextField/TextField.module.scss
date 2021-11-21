@@ -3,6 +3,11 @@
 .inputRoot {
   display: flex;
   flex-direction: column;
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .label {
@@ -22,8 +27,13 @@
   }
 
   &:focus {
-    border: $border-focus;
-    outline: none;
+    outline: $outline-focus;
+  }
+}
+
+.inputGrow {
+  @media (min-width: $desktop-width) {
+    width: 566px;
   }
 }
 

@@ -6,3 +6,4 @@ export * from "./Description/Description";
 export * from "./Form/Form";
 export * from "./TextField/TextField";
 export * from "./Checkbox/Checkbox";
+export * from "./Gallery/Gallery";

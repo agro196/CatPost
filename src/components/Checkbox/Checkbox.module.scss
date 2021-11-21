@@ -6,18 +6,17 @@
   padding-left: 34px;
   position: relative;
   cursor: pointer;
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    width: 24px;
-    height: 24px;
-    border: $border;
-    border-radius: $radius;
-  }
+.checkbox {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: $border;
+  border-radius: $radius;
 
   &::after {
     content: "";
@@ -33,16 +32,16 @@
   }
 }
 
-.rootChecked {
+.checkboxChecked {
   &::after {
     display: block;
   }
 }
 
-.input:focus ~ .root::before {
-  border-color: $basic-black;
+.input:focus ~ .checkbox {
+  outline: $outline-focus;
 }
 
-// .checkbox-field__input:hover ~ .checkbox-field__label::before {
-//   border-color: $b;
-// }
+.input:hover ~ .checkbox {
+  border: $border-hover;
+}

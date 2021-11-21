@@ -26,7 +26,11 @@ export function TextField({
       return (
         <label className={cx(className, styles.inputRoot)}>
           {children && <span className={styles.label}>{children}</span>}
-          <input type={type} className={styles.input} {...props} />
+          <input
+            type={type}
+            className={cx(styles.input, styles.inputGrow)}
+            {...props}
+          />
         </label>
       );
     case "textarea":

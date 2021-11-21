@@ -10,7 +10,9 @@ export function Header({ className, ...props }: HeaderProps): JSX.Element {
   return (
     <header className={cx(className, styles.root)} {...props}>
       <Container className={styles.container}>
-        <Logo />
+        <a href="#">
+          <Logo className={styles.logo} />
+        </a>
         <nav className={styles.nav}>
           <ul className={styles.navList}>
             <li className={styles.navListItem}>

@@ -1,14 +1,7 @@
-import React from "react";
-import { Description, Form, Header } from "./components";
+import { MainPage } from "./pages/MainPage";
 
 const App = (): JSX.Element => {
-  return (
-    <div className="app">
-      <Header />
-      <Description />
-      <Form />
-    </div>
-  );
+  return <MainPage />;
 };
 
 export default App;

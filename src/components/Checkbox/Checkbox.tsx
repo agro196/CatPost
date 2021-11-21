@@ -16,15 +16,16 @@ export function Checkbox({
   ...props
 }: CheckboxProps): JSX.Element {
   return (
-    <label
-      className={cx(className, styles.root, checked && styles.rootChecked)}
-    >
+    <label className={cx(className, styles.root)}>
       <input
         checked={checked}
         type="checkbox"
         className={cx(styles.input, "visually-hidden")}
         {...props}
       />
+      <span
+        className={cx(styles.checkbox, checked && styles.checkboxChecked)}
+      ></span>
       {children}
     </label>
   );

@@ -9,6 +9,8 @@
   color: $basic-white;
   border: none;
   border-radius: 4px;
+  transition-property: background-color;
+  transition-duration: 0.3s;
 
   &:hover {
     background-color: $light-blue;

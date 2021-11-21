@@ -1,7 +1,7 @@
 import React, { DetailedHTMLProps, FormHTMLAttributes, useState } from "react";
 import cx from "clsx";
 import styles from "./Form.module.scss";
-import { Button, Checkbox, Container, TextField, Title } from "..";
+import { Button, Checkbox, TextField, Title } from "..";
 import { ReactComponent as PawIcon } from "../../assets/img/paw.svg";
 
 export type FormProps = DetailedHTMLProps<
@@ -11,10 +11,10 @@ export type FormProps = DetailedHTMLProps<
 
 export function Form({ className, ...props }: FormProps): JSX.Element {
   const [puinkIsChecked, setPuinkIsChecked] = useState<boolean>(false);
-  const [yummiIsChecked, setYummiIsChecked] = useState<boolean>(false);
+  const [yummiIsChecked, setYummiIsChecked] = useState<boolean>(true);
   return (
-    <form className={cx(className, styles.root)} {...props}>
-      <Container>
+    <section className={cx(className, styles.root)} {...props}>
+      <form className={styles.form}>
         <fieldset className={styles.fieldset}>
           <Title className={styles.legend} tag={"legend"} font={"small"}>
             Сообщение
@@ -51,10 +51,16 @@ export function Form({ className, ...props }: FormProps): JSX.Element {
           <Title className={styles.legend} tag={"legend"} font={"small"}>
             Контакты для связи
           </Title>
-          <TextField tag={"input"} type="text" name="name">
+          <TextField
+            className={styles.input}
+            tag={"input"}
+            type="text"
+            name="name"
+          >
             Ваше имя
           </TextField>
           <TextField
+            className={styles.input}
             tag={"input"}
             type="email"
             name="email"
@@ -62,11 +68,19 @@ export function Form({ className, ...props }: FormProps): JSX.Element {
           >
             Email
           </TextField>
+          <small className={styles.smallText}>
+            Мы вышлем вам фото довольного кошачьего лица
+          </small>
         </fieldset>
-        <Button className={styles.button} variant="submit" icon={<PawIcon />}>
+        <Button
+          className={styles.button}
+          variant="submit"
+          icon={<PawIcon />}
+          type="button"
+        >
           Отправить
         </Button>
-      </Container>
-    </form>
+      </form>
+    </section>
   );
 }
